@@ -1,0 +1,2 @@
+var ApiGen = ApiGen || {};
+ApiGen.elements = [{"file":"namespace-App.html","label":"App"},{"file":"namespace-App.Controllers.html","label":"App\\Controllers"},{"file":"namespace-App.View.html","label":"App\\View"},{"file":"class-App.Database.html","label":"App\\Database"},{"file":"class-App.Controllers.HomeController.html","label":"App\\Controllers\\HomeController"},{"file":"class-App.View.Twig.html","label":"App\\View\\Twig"},{"file":"class-App.View.View.html","label":"App\\View\\View"}];
