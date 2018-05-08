@@ -22,8 +22,7 @@
             </form>
         </div>
         <div class="panel panel-default" style="margin-top: 10px;">
-            <div class="panel-heading"><b>Atelier :</b> <span id="nom">{{ atelier.libelle }}</span> <i class="small">(<span id="places">{{ atelier.nbplacesmaxi }}</span> places max)</i>
-            <div class="pull-right"><span id="nombre"></span> avis enregistrés</div></div>
+            <div class="panel-heading"><b>Atelier :</b> <span id="nom">{{ atelier.libelle }}</span> <i class="small">(<span id="places">{{ atelier.nbplacesmaxi }}</span> places max)</i></div>
             <div class="panel-body text-center">
                 {% for type in types|reverse %}
                     <button class="btn btn-lg btn-default" data-value="{{ type.id }}">{{ type.libelle }}</button>
@@ -31,7 +30,7 @@
                 <input type="hidden" name="atelier" value="{{ atelier.id }}">
 
                 <div class="row">
-                    <h4><span class="label label-default" id="nombre"></span> avis enregistrés</h4>
+                    <h4><span class="badge" id="nombre"></span> avis enregistrés</h4>
                 </div>
                 <div class="alert message" style="display: none; margin-top: 10px;"></div>
             </div>
