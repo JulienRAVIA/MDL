@@ -1,0 +1,52 @@
+{% extends 'includes/template.twig' %}
+{% import 'includes/macro.twig' as component %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <img src="img/logo.png" alt="Maison des Ligues de Lorraine">
+        </div>
+    </div>
+    {% set atelier = ateliers[0] %}
+    <div class="container">
+        {% if ateliers|length %}
+        <div class="row">
+            <form action="">
+                <div class="col-md-5">
+                    <select class="form-control" id="ateliers">
+                        {% for atelier in ateliers %}
+                            <option value="{{ atelier.id }}" data-places="{{ atelier.nbplacesmaxi }}">{{ atelier.libelle|upper }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="panel panel-default" style="margin-top: 10px;">
+            <div class="panel-heading"><b>Atelier :</b> <span id="nom">{{ atelier.libelle }}</span> <i class="small">(<span id="places">{{ atelier.nbplacesmaxi }}</span> places max)</i>
+            <div class="pull-right"><span id="nombre"></span> avis enregistrés</div></div>
+            <div class="panel-body text-center">
+                {% for type in types|reverse %}
+                    <button class="btn btn-lg btn-default" data-value="{{ type.id }}">{{ type.libelle }}</button>
+                {% endfor %}
+                <input type="hidden" name="atelier" value="{{ atelier.id }}">
+
+                <div class="row">
+                    <h4><span class="label label-default" id="nombre"></span> avis enregistrés</h4>
+                </div>
+                <div class="alert message" style="display: none; margin-top: 10px;"></div>
+            </div>
+        </div>
+        {#  
+        <div class="panel panel-default" style="margin-top: 10px;">
+            <div class="panel-heading"><b>Résultats :</b></div>
+            <div class="panel-body">
+                <ul id="resultats" class="list-unstyled">
+                </ul>
+            </div>
+        </div>
+        #}
+        {% else %}
+            <div class="col-md-10 alert alert-danger">Pas d'ateliers</div>
+        {% endif %}
+    </div>
+{% endblock %}

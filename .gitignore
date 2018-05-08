@@ -1,0 +1,7 @@
+/vendor/
+.vscode
+.idea
+.phpintel
+/nbproject/
+/testzone/
+composer.lock
