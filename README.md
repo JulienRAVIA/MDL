@@ -27,8 +27,8 @@ Ne mettre en production que la version de "prod", c'est à dire sans les dépend
 
 ## Documentation
 
-Lien vers la documentation : https://julienravia.github.io/MDL/
-Lien vers la documentation de l'application C# : https://julienravia.github.io/MDL/csharp
+* Lien vers la documentation de l'application PHP  : https://julienravia.github.io/MDL/
+* Lien vers la documentation de l'application C# : https://julienravia.github.io/MDL/csharp
 
 Lancer la mise à jour/regénération de la documentation avec la commande suivante (à la racine du projet) : 
 ``vendor\bin\apigen generate src --destination docs``
