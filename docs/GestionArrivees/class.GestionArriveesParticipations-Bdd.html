@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Class MaisonDesLiguesWPF.Utilitaire</title>
+	<title>Class GestionArriveesParticipations.Bdd</title>
 	<link rel="stylesheet" href="resources/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/docs.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -11,7 +11,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-  <a class="navbar-brand" href="#">MaisonDesLiguesWPF</a>
+  <a class="navbar-brand" href="#">GestionArriveesParticipations</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,32 +38,33 @@
 		<ol class="breadcrumb">
   		  <li class="breadcrumb-item">
   		  	<span class="badge badge-success">Class</span>
-  		  	<a href="namespace.MaisonDesLiguesWPF.html">MaisonDesLiguesWPF</a>
+  		  	<a href="namespace.GestionArriveesParticipations.html">GestionArriveesParticipations</a>
   		  </li>
   		  <li class="breadcrumb-item">
-  		  	Utilitaire
+  		  	Bdd
   		  </li>
   		</ol>
 	</nav>
 
 	<div class="card mb-2">
 		<div class="card-body" style="padding: 10px;">
-			
+			Classe contenant des méthodes réalisant des opérations sur la BDD.
 		</div>
 	</div>
 
-	<h3>Utilitaire</h3>
+	<h3>Bdd</h3>
 	<div class="card">
 		<div class="card-header" style="padding: 5px;">Methods</div>
 		<div class="card-body" style="padding: 0;">
-	    	<table class="table table-striped" style="margin: 0;">
+	    	<table class="table table-striped table-responsive-sm" style="margin: 0;">
 			  	<tbody>
 			    			        <tr id="">
 			    	  <th scope="row"><span class="badge badge-primary">Method</span></th>
 			    	  <td>
-			    	  	<a href="#">RemplirComboBox</a><br>
-			    	  	Méthode permettant de remplir une combobox. <br>
-			    	  				    	  		<table class="table table-sm mt-2">
+			    	  	<a href="#">#ctor</a><br>
+			    	  	Initialise une nouvelle instance de la classe .
+            Connecte l&#039;application à la BDD. <br>
+			    	  				    	  		<table class="table table-sm table-responsive-sm mt-2">
 			    	  			<thead>
 			    	  				<tr>
 			    	  					<th colspan="3">Parameters</th>
@@ -71,14 +72,19 @@
 			    	  			</thead>
 							  	<tbody>
 			    	  														<tr>
-							  	  	  		<th scope="row">System.Windows.Controls.ComboBox</th>
-							  	  		  	<td>cbo</td>
-							  	  		  	<td>Combobox à remplir.</td>
+							  	  	  		<th scope="row">System.String</th>
+							  	  		  	<td>login</td>
+							  	  		  	<td>Login pour la connexion.</td>
 							  	  		</tr>
 			    	  														<tr>
-							  	  	  		<th scope="row">System.Data.DataTable</th>
-							  	  		  	<td>data</td>
-							  	  		  	<td>Données à utiliser pour remplir la combobox.</td>
+							  	  	  		<th scope="row">System.String</th>
+							  	  		  	<td>password</td>
+							  	  		  	<td>Mot de passe pour la connexion.</td>
+							  	  		</tr>
+			    	  														<tr>
+							  	  	  		<th scope="row">GestionArriveesParticipations.LieuConnexion</th>
+							  	  		  	<td>lieuConnexion</td>
+							  	  		  	<td>Lieu de connexion.</td>
 							  	  		</tr>
 			    	  											  	</tbody>
 							</table>
@@ -89,10 +95,27 @@
 			    			        <tr id="">
 			    	  <th scope="row"><span class="badge badge-primary">Method</span></th>
 			    	  <td>
-			    	  	<a href="#">CreerDesControles</a><br>
-			    	  	Méthode créant des contrôles d&#039;un type spécifié à partir de données et les positionne 
-            dans un container également spécifié. <br>
-			    	  				    	  		<table class="table table-sm mt-2">
+			    	  	<a href="#">LieuConnexion</a><br>
+			    	  	Obtient ou définit le lieu de connexion. <br>
+			    	  				    	  </td>
+			    	  <td>
+			    	  				    	  </td>
+			    	</tr>
+			    			        <tr id="">
+			    	  <th scope="row"><span class="badge badge-primary">Method</span></th>
+			    	  <td>
+			    	  	<a href="#">FermerConnexion</a><br>
+			    	  	Méthode permettant de fermer la connexion <br>
+			    	  				    	  </td>
+			    	  <td>
+			    	  				    	  </td>
+			    	</tr>
+			    			        <tr id="">
+			    	  <th scope="row"><span class="badge badge-primary">Method</span></th>
+			    	  <td>
+			    	  	<a href="#">ObtenirDonneesOracle</a><br>
+			    	  	permet de récupérer le contenu d&#039;une table ou d&#039;une vue. <br>
+			    	  				    	  		<table class="table table-sm table-responsive-sm mt-2">
 			    	  			<thead>
 			    	  				<tr>
 			    	  					<th colspan="3">Parameters</th>
@@ -100,19 +123,42 @@
 			    	  			</thead>
 							  	<tbody>
 			    	  														<tr>
-							  	  	  		<th scope="row">System.Data.DataTable</th>
-							  	  		  	<td>data</td>
-							  	  		  	<td>Données à utiliser pour la création des contrôles.</td>
+							  	  	  		<th scope="row">System.String</th>
+							  	  		  	<td>uneTableOuVue</td>
+							  	  		  	<td> nom de la table ou la vue dont on veut récupérer le contenu</td>
+							  	  		</tr>
+			    	  											  	</tbody>
+							</table>
+			    	  				    	  </td>
+			    	  <td>
+			    	  				    	  </td>
+			    	</tr>
+			    			        <tr id="">
+			    	  <th scope="row"><span class="badge badge-primary">Method</span></th>
+			    	  <td>
+			    	  	<a href="#">EnregistrerArrivee</a><br>
+			    	  	Enregistrement de l&#039;arrivée d&#039;un participant dans la base de données. <br>
+			    	  				    	  		<table class="table table-sm table-responsive-sm mt-2">
+			    	  			<thead>
+			    	  				<tr>
+			    	  					<th colspan="3">Parameters</th>
+			    	  				</tr>
+			    	  			</thead>
+							  	<tbody>
+			    	  														<tr>
+							  	  	  		<th scope="row">System.Int32</th>
+							  	  		  	<td>idParticipant</td>
+							  	  		  	<td>Id du participant concerné.</td>
+							  	  		</tr>
+			    	  														<tr>
+							  	  	  		<th scope="row">System.DateTime</th>
+							  	  		  	<td>dateHeure</td>
+							  	  		  	<td>Date/heure de l&#039;arrivée.</td>
 							  	  		</tr>
 			    	  														<tr>
 							  	  	  		<th scope="row">System.String</th>
-							  	  		  	<td>typeControle</td>
-							  	  		  	<td>Type de contrôle à utiliser.</td>
-							  	  		</tr>
-			    	  														<tr>
-							  	  	  		<th scope="row">System.Windows.Controls.StackPanel</th>
-							  	  		  	<td>container</td>
-							  	  		  	<td>Conteneur des contrôles à créer.</td>
+							  	  		  	<td>cleWifi</td>
+							  	  		  	<td>Cle wifi assignée au participant.</td>
 							  	  		</tr>
 			    	  											  	</tbody>
 							</table>
