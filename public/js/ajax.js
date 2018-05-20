@@ -3,7 +3,7 @@ $('button[data-value]').on('click', function() {
 	var type = $(this).attr('data-value');
   	$.ajax({
 	  	type: "POST",
-	  	url: "/avis",
+	  	url: "avis",
 	  	data: {atelier: atelier, type: type},
 	  	dataType: "json",
 	  	success: function(data) {
@@ -29,7 +29,7 @@ $('button[data-value]').on('click', function() {
 function resultats(atelier) {
 	$.ajax({
 	  	type: "POST",
-	  	url: "/resultats",
+	  	url: "resultats",
 	  	data: {atelier: atelier},
 	  	dataType: "json",
 	  	success: function(results) {
@@ -44,11 +44,10 @@ function resultats(atelier) {
 function nombre(atelier) {
 	$.ajax({
 	  	type: "POST",
-	  	url: "/avis/nb",
+	  	url: "avis/nb",
 	  	data: {atelier: atelier},
 	  	dataType: "json",
 	  	success: function(results) {
-	  		console.log(results.data)
 	  		$('span#nombre').html(results.data.nombre);
 	  	}
 	});

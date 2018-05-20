@@ -13,7 +13,8 @@
 
 
 -- Export de la structure de la base pour mdl
-CREATE DATABASE IF NOT EXISTS `mdl` /*!40100 DEFAULT CHARACTER SET latin1 */;
+DROP DATABASE IF EXISTS `mdl`;
+CREATE DATABASE `mdl`;
 USE `mdl`;
 
 -- Export de la structure de la table mdl. atelier
@@ -25,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `atelier` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Export de données de la table mdl.atelier : ~6 rows (environ)
-/*!40000 ALTER TABLE `atelier` DISABLE KEYS */;
+/*!40000 ALTER TABLE `atelier` ENABLE KEYS */;
 INSERT INTO `atelier` (`id`, `libelle`, `nbplacesmaxi`) VALUES
 	(1, 'Le club et son projet', 60),
 	(2, 'Le fonctionnement du club', 80),
@@ -34,6 +35,20 @@ INSERT INTO `atelier` (`id`, `libelle`, `nbplacesmaxi`) VALUES
 	(5, 'I.F.F.E', 70),
 	(6, 'Développement durable', 60);
 /*!40000 ALTER TABLE `atelier` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `typeavis` (
+  `id` varchar(2) NOT NULL,
+  `libelle` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table mdl.typeavis : ~4 rows (environ)
+/*!40000 ALTER TABLE `typeavis` ENABLE KEYS */;
+INSERT INTO `typeavis` (`id`, `libelle`) VALUES
+	('MS', 'Moyennement satisfait'),
+	('PS', 'Pas du tout satisfait'),
+	('SS', 'Satisfait'),
+	('TS', 'Très satisfait');
 
 -- Export de la structure de la table mdl. avis
 CREATE TABLE IF NOT EXISTS `avis` (
@@ -49,7 +64,9 @@ CREATE TABLE IF NOT EXISTS `avis` (
 ) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
 
 -- Export de données de la table mdl.avis : ~98 rows (environ)
-/*!40000 ALTER TABLE `avis` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `avis` ENABLE KEYS */;
+
 INSERT INTO `avis` (`id`, `atelier`, `type`, `date`) VALUES
 	(1, 1, 'PS', '2018-05-07 23:42:27'),
 	(2, 1, 'TS', '2018-05-07 23:45:00'),
@@ -194,23 +211,10 @@ INSERT INTO `avis` (`id`, `atelier`, `type`, `date`) VALUES
 	(141, 1, 'MS', '2018-05-08 18:06:14'),
 	(142, 1, 'SS', '2018-05-08 18:06:15'),
 	(143, 1, 'MS', '2018-05-08 18:06:16');
-/*!40000 ALTER TABLE `avis` ENABLE KEYS */;
+
 
 -- Export de la structure de la table mdl. typeavis
-CREATE TABLE IF NOT EXISTS `typeavis` (
-  `id` varchar(2) NOT NULL,
-  `libelle` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Export de données de la table mdl.typeavis : ~4 rows (environ)
-/*!40000 ALTER TABLE `typeavis` DISABLE KEYS */;
-INSERT INTO `typeavis` (`id`, `libelle`) VALUES
-	('MS', 'Moyennement satisfait'),
-	('PS', 'Pas du tout satisfait'),
-	('SS', 'Satisfait'),
-	('TS', 'Très satisfait');
-/*!40000 ALTER TABLE `typeavis` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

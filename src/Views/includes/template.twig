@@ -12,7 +12,9 @@
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/toastr.min.css" rel="stylesheet" >
-        <link href="css/sports.css" rel="stylesheet" >
+        {# A ajouter si c'est dans un dossier (dans ce cas mdl)
+        <base href="mdl"> 
+        #}
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         {% endblock %}
     </head>
@@ -23,13 +25,13 @@
             <script src="js/jquery-3.2.1.js"></script>
             <script src="js/ajax.js"></script>
             <script src="js/toastr.min.js"></script>
-            <script>
+            <script type="text/javascript">
                 toastr.options = {
                   "closeButton": true,
                   "newestOnTop": false,
                   "progressBar": false,
                   "positionClass": "toast-bottom-right"
-                }
+                };
             </script>
         {% endblock %}
     </body>

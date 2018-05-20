@@ -4,7 +4,7 @@ include_once '../bootstrap.php';
 
 $router = new AltoRouter();
 // Si il n'y à pas de virtual host et que le projet est dans www
-// $router->setBasePath('/GSB/public');
+// $router->setBasePath('/mdl/public');
 
 // Page d'accueil et déconnexion
 $router->addRoutes(array(
